@@ -14,15 +14,11 @@ class App extends Component {
     return (
       <div className="App">
         <section className="app-detail">
-
-{countries.map(c => <div>
-  <Menu name={c.name.common} />
-</div>)}
-        
+          {countries.map(c =><Menu key={c.name.common} name={c.name.common} />)}
         </section>
 
         <section className="app-detail">
-        <Detail {...this.state.countries}/>
+        {countries.map(c =><Detail key={c.name.common} {...c} />)}
         </section>
 
       </div>
