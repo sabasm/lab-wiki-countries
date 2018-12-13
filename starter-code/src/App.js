@@ -1,25 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Menu from './components/menu';
+import Detail from './components/detail';
+import countries from './countries.json'
 
 class App extends Component {
+  state ={
+    countries:[]
+  }
   render() {
+    //const countriesJson = {...this.state.countries}
+    console.log(countries)
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <section className="app-detail">
+
+{countries.map(c => <div>
+  <Menu name={c.name.common} />
+</div>)}
+        
+        </section>
+
+        <section className="app-detail">
+        <Detail {...this.state.countries}/>
+        </section>
+
       </div>
     );
   }

@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  align-self: center;
+  display: flex;
+  justify-content: center;
 }
 
 .App-logo {
@@ -29,4 +32,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+.app-menu{
+  width:20%;
+}
+.app-detail{
+  width:70%;
+}
+
+.detail{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+.detail h2, .detail h3{
+padding-right: 60%;
 }
